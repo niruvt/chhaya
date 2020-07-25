@@ -1,0 +1,230 @@
+% \iffalse meta-comment
+%
+% File: chhaya.dtx
+% ---------------------------------------------------------------------------
+% आज्ञासंच:		chhaya
+% लेखक:		निरंजन
+% माहिती:	 भाषावैज्ञानिक छायांगांचे संक्षेप पुरवणारा आज्ञासंच
+% दुवा:   https://gitlab.com/niranjanvikastambe/chhaya
+% अडचणी:  https://gitlab.com/niranjanvikastambe/chhaya/-/issues
+% परवाना:      लाटेक् प्रकल्प परवाना. आवृत्ती १.३सी किंवा त्यापुढील.
+% ---------------------------------------------------------------------------
+% हे काम लाटेक् प्रकल्प परवान्याच्या अटींचे पालन करून वितरित केले जाऊ शकते
+% तसेच सुधारले जाऊ शकते.
+% 
+% ह्या परवान्याची नवीनतम आवृत्ती पुढील संकेतस्थळावरून मिळवता येऊ शकते.
+% 
+% http://www.latex-project.org/lppl.txt.
+% 
+% हा आज्ञासंचाची लाटेक् प्रकल्पाच्या नियमांनुसार देखरेख केली जात आहे.
+% 
+% ह्या आज्ञासंचाचा लेखक व पालक निरंजन आहे.
+% 
+% ह्या कामात chhaya.dtx, chhaya.ins तसेच त्यांपासून निर्माण केलेली
+% chhaya.sty ही धारिका समाविष्ट आहे.
+% ---------------------------------------------------------------------------
+%
+% \fi
+% \iffalse
+%<*internal>
+\iffalse
+%</internal>
+%<*readme>
+आज्ञासंच:    chhaya
+लेखक:       निरंजन
+आवृत्ती:      ०.१ (जुलै, २०२०)
+माहिती:  	 भाषावैज्ञानिक छायांगांचे संक्षेप पुरवणारा आज्ञासंच
+दुवा:   	  https://gitlab.com/niranjanvikastambe/chhaya
+अडचणी:     https://gitlab.com/niranjanvikastambe/chhaya/-/issues
+परवाना:      लाटेक् प्रकल्प परवाना. आवृत्ती १.३सी किंवा त्यापुढील.
+
+अधिक माहितीकरिता chhaya.dtx ही बीजधारिका पाहा.
+--------------------------------------------------------------------------
+Package:      chhaya
+Author:       Niranjan
+Version:      0.1  (July, 2020)
+Description:  For linguistic glossing in Marathi language.
+Repository:   https://gitlab.com/niranjanvikastambe/chhaya
+Bug tracker:  https://gitlab.com/niranjanvikastambe/chhaya/-/issues
+License:      The LaTeX Project Public License v1.3c or later.
+--------------------------------------------------------------------------
+%</readme>
+%<*internal>
+\fi
+%</internal>
+%<*driver|package>
+\def\chhayaPackageName{chhaya}
+\def\chhayaPackageVersion{०.१}
+\def\chhayaPackageDate{जुलै, २०२०}
+\def\chhayaPackageDescription{भाषावैज्ञानिक छायांगांचे संक्षेप पुरवणारा आज्ञासंच}
+%</driver|package>
+%<*driver>
+\documentclass[10pt]{l3doc}
+\usepackage{xltxtra}
+\usepackage{marathi}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+\usepackage{capt-of}
+\renewcommand{\tablename}{कोष्टक}
+\usepackage{standalone}
+\makeatletter
+\RequirePackage{devanagaridigits}
+\def\@arabic#1{\expandafter\devanagaridigits\expandafter{\number#1}}
+\makeatother
+\renewcommand{\theCodelineNo}{{\scriptsize\arabic{CodelineNo}}\quad}
+\setmonofont[Script=Devanagari]{Mukta}
+\newfontfamily{\mukta}[Script=Devanagari]{Mukta}
+\newfontfamily{\sho}{Shobhika}
+\usepackage{minted}
+\usemintedstyle{bw}
+\usepackage{fontawesome5}
+\renewcommand{\abstractname}{सारांश}
+\renewcommand{\contentsname}{अनुक्रमणिका}
+\usepackage[sort=use,nonumberlist]{glossaries}
+\usepackage{biblatex}
+\addbibresource{ref.bib}
+\usepackage{longtable}
+\usepackage{standalone}
+\makenoidxglossaries
+\usepackage{setspace}
+\sloppy
+\hyphenpenalty=10000
+\exhyphenpenalty=1000
+
+\RecordChanges
+\begin{document}
+\setstretch{1.5}
+\DocInput{\chhayaPackageName.dtx}
+\end{document}
+%</driver>
+% \fi
+%
+%
+%
+% \title{छाया}
+% \author{निरंजन}
+% \date^^A
+%   {^^A
+%     आवृत्ती \chhayaPackageVersion\ \textemdash\ \chhayaPackageDate\\[1ex]^^A
+%     {\small\faIcon{gitlab}\quad\url{https://gitlab.com/niranjanvikastambe/chhaya}}^^A
+%   }
+%
+% \maketitle
+%
+% \begin{abstract}
+% भाषावैज्ञानिक लेखनात अपरिचित भाषांतील उदाहरणांची छाया देणे ही एक अनिवार्य गोष्ट आहे. त्यासाठीच्या संक्षेपांचा संग्रह ह्या आज्ञासंचात करण्यात आला आहे. इंग्रजी छायांगांचे संक्षेप \href{https://ctan.org/pkg/leipzig?lang=en}{leipzig} ह्या आज्ञासंचामार्फत पुरवले जातात. लायप्चिश् विद्यापीठाच्या नियमावलीनुसार लागणाऱ्या अनेक निकषांची पूर्तता ह्या आज्ञासंचातर्फे केली जाते. मराठी भाषावैज्ञानिक लेखनाकरिता छायांगलेखनाचे नवे नियम मुंबई विद्यापीठाच्या संकेतस्थळावर \href{https://www.mumbailinguisticcircle.com/resources/}{येथे} देण्यात आले आहेत \cite{मुंबई}. त्यांचा विचार करून हा आज्ञासंच घडवण्यात आला आहे. ह्या आज्ञासंचात काही छायांगांच्या तयार आज्ञा आहेतच, शिवाय लेखकांना गरजेनुसार नवी छायांगे निर्माण करण्यासाठी एक आज्ञादेखील आहे. \href{https://ctan.org/pkg/hyperref?lang=en}{hyperref} हा आज्ञासंच वापरत असाल, तर छाया हा आज्ञासंच त्यानंतर वापरा.
+% \end{abstract}
+% \tableofcontents
+% \clearpage\pagebreak
+% \begin{documentation}
+% \begin{function}{\छायांग}
+% \begin{syntax}
+% \cs{छायांग}\marg{संक्षिप्त रूप}\marg{विस्तृत वर्णन}
+% \end{syntax}
+% ह्या आज्ञेचा पहिला कार्यघटक छायांगाचे संक्षिप्त रूप हा आहे व दुसरा कार्यघटक त्या छायांगाचे स्पष्टीकरणात्मक वर्णन. उदा. एकवचनासाठीचे \textbf{एव} हे छायांग पुढीलप्रमाणे घडवता येते.
+%
+% \noindent\verb|\छायांग{एव}{एकवचन}|
+% \end{function}
+% \begin{function}{\छायांगसूची}
+% ही आज्ञा वापरल्यास दस्तऐवजातील सर्व छायांगांची यादी छापली जाते. आज्ञासंचातर्फे ह्या यादीचे नाव छायांगसूची असे ठेवले आहे.
+% \end{function}
+% \begin{function}{समरेखा}
+% छायालेखनाच्या नियमावलीतील तिसऱ्या नियमानुसार मजकूर पारंपरिक टंकात असेल, तर छायांगांकरिता समरेखा टंक वापरण्यात यावेत व मजकूर समरेखा टंकात असेल, तर छायांगांकरिता पारंपरिक टंक वापरावेत. पारंपरिक टंक देवनागरी लिहिताना जास्त वापरले जात असल्यामुळे ह्या आज्ञासंचाद्वारे मुक्त हा समरेखा टंक छायांगांसाठी निवडण्यात आला आहे. हा टंक तुमच्याकडे नसेल, तर \href{https://ctan.org/pkg/ektype-tanka}{एक-टाईप टंक} हा आज्ञासंच तुमच्या संगणकावर बसवून घ्या. मजकूर समरेखा टंकात लिहीत असाल, तर आज्ञासंचासह \textbf{समरेखा} हे प्राचल वापरा. त्यामुळे छायांगांकरिता शोभिका हा पारंपरिक टंक निवडला जाईल. ह्या प्राचलास किंमत देता येते. \verb|समरेखा = <टंकाचे नाव>| अशा प्रकारे हे प्राचल लिहिल्यास छायांगांचा टंक आपल्या पसंतीनुसार निवडता येतो.
+% \end{function}
+% \bigskip
+% \noindent\textbf{महत्त्वाची सूचना} - दोन छायांगांमध्ये मोकळी जागा हवी असल्यास छायांगानंतर महिरपी कंस टाकण्यात यावेत. उदा. \verb|\एव{}|.
+% \section{आज्ञासंचातील छायांगे {\small (आ ०.१)}}
+%\begin{longtable}{lll}
+% \hline
+% छायांग & वर्णन \\
+% \hline
+% पुं & पुल्लिंग\\
+% स्त्री & स्त्रीलिंग\\
+% नपुं & नपुंसकलिंग\\
+% १ & प्रथम व्यक्ती\\
+% २ & द्वितीय व्यक्ती\\
+% ३ & तृतीय व्यक्ती\\
+% एव & एकवचन\\ 
+% द्विव & द्विवचन\\ 
+% त्रिव & त्रिव\\
+% अव & अल्पवचन\\
+% बव & बहुवचन\\
+% अवि & अभिधानपर विभक्ती\\
+% कर्मवि & कर्मपर विभक्ती\\
+% सा & साधनपर विभक्ती\\
+% दावि & दानपर विभक्ती\\
+% वियो & वियोगपर विभक्ती\\
+% संयो & संबंधयोजक विभक्ती\\
+% अधि & अधिकरण विभक्ती\\
+% संबो & संबोधन विभक्ती\\
+% साह & साहचर्यदर्शक विभक्ती\\
+% कवि & कर्तृत्वपर विभक्ती\\
+% आवि & आगत विभक्ती\\
+% साक्रि & साहाय्यक क्रियापद\\
+% गणक & गणक\\
+% भूत & भूतकाळ\\
+% वर्त & वर्तमान काळ\\
+% भवि & भविष्यकाळ\\
+% पू & पूर्ण\\
+% अपू & अपूर्ण\\
+% नि & नित्य\\
+% अखं & अखंडित\\
+% क्र & क्रमिक\\
+% अक्र & अक्रमिक\\
+% \end{longtable}
+% \end{documentation}
+% \begin{implementation}
+% \section{आज्ञासंचाची घडण}
+% आज्ञासंचाकरिता आवश्यक सामग्री पुढील आज्ञांद्वारे पुरवली आहे.
+%    \begin{macrocode}
+%<*package>
+\ProvidesPackage{chhaya} 
+\NeedsTeXFormat{LaTeX2e}
+\RequirePackage{fontspec}
+\RequirePackage[acronym]{glossaries}
+%    \end{macrocode}
+% समरेखा हे प्राचल पुढील आज्ञावलीमार्फत पुरवले जाते.
+%    \begin{macrocode}
+\pgfkeys{
+    chhaya/.is family,
+    chhaya/.cd,
+    समरेखा/.code={\setfontfamily\test@acronymfont[Script=Devanagari,Mapping=devanagarinumerals]{#1}},
+    समरेखा=Mukta,
+    समरेखा/.default=Shobhika,
+}
+\DeclareTextFontCommand{\textacronym}{\test@acronymfont}
+\def\chhaya@setkey#1{\pgfkeys{chhaya/.cd,#1}}
+\DeclareOption*{\expandafter\chhaya@setkey\expandafter{\CurrentOption}}
+\ProcessOptions
+%    \end{macrocode}
+% नव्या छायांगांकरिता आज्ञेची निर्मिती पुढील आज्ञेने होते.
+%    \begin{macrocode}
+\newcommand{\छायांग}[2]
+{
+    \newacronym{#1}{\textacronym{#1}}{#2}
+    \expandafter\newcommand\csname#1\endcsname{\acrshort{#1}}
+}
+%    \end{macrocode}
+% \verb|sankshep.tex| ह्या धारिकेत काही छायांगे पुरवली आहेत. त्यांना पुढील आज्ञांमुळे वापरता येते.
+%    \begin{macrocode}
+\makeglossaries
+\input{sankshep.tex}
+%    \end{macrocode}
+% छायांगसूची छापण्यासाठी पुढील आज्ञा समाविष्ट केली आहे.
+%    \begin{macrocode}
+\providecommand{\छायांगसूची}{
+    \printglossary[type=\acronymtype,title={छायांगसूची}]
+}
+%    \end{macrocode}
+%    \begin{macrocode}
+%</package>
+%    \end{macrocode}
+% \end{implementation}
+% \printbibliography
+% \Finale
